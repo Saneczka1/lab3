@@ -125,39 +125,39 @@ for (;;) {
 i ++;
 // odczyty na osiach 
 /* Os 1*/
- print_me ( read_os1 () );
- putchars ("\n ") ;
+ print_me(show_os1());
+ putchars("\n ") ;
 /* Os 2*/
- print_me ( read_os2 () );
- putchars ("\ n ") ;
- print_me ( read_counter () );
+ print_me(show_os2() );
+ putchars("\ n ") ;
+ print_me(show_counter());
 /* Test 2 - zapis na osiach */
 // if (i ==1000) {
 /* Os 1*/
 // putchars (" Testowana w a r t o Ż : 0 x7C57BA \n ") ;
 // putchars (" Spodziewany wynik : 1111") ;
-// write_os1 (0 x7C57BA );
+// store_os1 (0 x7C57BA );
 /* Os 2*/
 // putchars (" Testowana w a r t o Ż : 0 xBABA \n ") ;
 // putchars (" Spodziewany wynik : 0101") ;
-// write_os2 (0 xBABA );
+// store_os2 (0 xBABA );
 //}
 /* Test 3 - test podtrzymania */
 // putchars (" Test podtrzymania ") ;
-// write_os1 (0 x7C57BA );
+// store_os1 (0 x7C57BA );
 // RAW_SPACE (0 x0570 )= 0 x5555 ; // zapisanie wartosci na zly adres
 /* Test 4 - test neutralnosci */
 // print_me ( RAW_SPACE (0 xFFFF )) ; // odczyt ze zlego adresu
 // putchars ("\ n ") ;
 /* Test 5 - test licznika */
-// unsigned long counter_value = read_counter () ;
+// unsigned long counter_value = show_counter () ;
 /*1 na pierwszym bicie */
-// write_counter (0 x2 ) ;
-// print_me ( read_counter () );
+// store_counter (0 x2 ) ;
+// print_me ( show_counter () );
 // putchars (" ") ;
 /*1 na drugim bicie */
-write_counter (0x4);
-print_me ( read_counter () );
+store_counter (0x4);
+print_me ( show_counter () );
 putchars (" ") ;
 }
 my_simulation_exit (0) ;
