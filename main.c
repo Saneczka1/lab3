@@ -121,27 +121,27 @@ putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 
 putchars (" Test : \n ") ;
 int i = 0;
-for (;;) {
-i ++;
+//for (;;) {
+//i ++;
 // odczyty na osiach 
-/* Os 1
+/* Os 1*/
  print_me(show_os1());
  putchars("\n ") ;
-/* Os 2
+/* Os 2*/
  print_me(show_os2() );
  putchars("\n ") ;
  print_me(show_counter());
 /* Test 2 - zapis na osiach */
-if (i ==1000) {
+//if (i ==1000) {
 /* Os 1*/
-     putchars (" Testowana w a r t o Ż : 0x7C57BA \n ") ;
-     putchars (" Spodziewany wynik : 1111") ;
-     store_os1 (0x7C57BC);
+//     putchars (" Testowana w a r t o Ż : 0x7C57BA \n ") ;
+//     putchars (" Spodziewany wynik : 1111") ;
+//     store_os1 (0x7C57BC);
     /* Os 2*/
-     putchars (" Testowana w a r t o Ż : 0 xBABA \n ") ;
-     putchars (" Spodziewany wynik : 0101") ;
-     store_os2 (0xBABC);
-    }
+//     putchars (" Testowana w a r t o Ż : 0 xBABA \n ") ;
+//     putchars (" Spodziewany wynik : 0101") ;
+//     store_os2 (0xBABC);
+//    }
 /* Test 3 - test podtrzymania */
 // putchars (" Test podtrzymania ") ;
 // store_os1 (0 x7C57BA );
@@ -159,7 +159,7 @@ if (i ==1000) {
 store_counter (0x4);
 print_me ( show_counter () );
 putchars (" ") ;
-}
+//}
 my_simulation_exit (0) ;
 return 0;}
 
