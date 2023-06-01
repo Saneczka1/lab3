@@ -158,7 +158,7 @@ int i = 0;
 /*1 na drugim bicie */
 store_counter (0x4);
 print_me(show_counter());
-putchars(" ") ;
+putchars(" ");
 //}
 my_simulation_exit(0);
 return 0;}
