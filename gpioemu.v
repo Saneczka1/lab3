@@ -87,6 +87,8 @@ begin
 		
 	if ( status [2]== 1)
 			counter_s <= 252;
+			status [2] <=0;
+			status [1] <=1;
 	if ( counter_s != 255 && status [1]==1)
 		counter_s <= counter_s + 1;
 	if ( counter_s == 255) begin

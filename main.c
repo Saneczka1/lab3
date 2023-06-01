@@ -134,10 +134,10 @@ int i = 0;
 /* Test 2 - zapis na osiach */ //                           działa
 //if (i ==1000) {
 /* Os 1*/
-     putchars (" Testowana w a r t o Ż : 0xabcdec \n ") ;
-     putchars (" Spodziewany wynik : 0111") ;
-     store_os1 (0xabcdec);
-    if (show_os1() == 111) {
+     putchars(" Testowana w a r t o Ż : 0xabcdec \n ") ;
+     putchars(" Spodziewany wynik : 0111") ;
+     store_os1(0xabcdec);
+    if (show_os1() == 7) {
     putchars("OK");
 } else {
     putchars("NOT OK");
