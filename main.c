@@ -128,8 +128,8 @@ int i = 0;
  print_me(show_os1());
  putchars("\n ") ;
 /* Os 2*/
- print_me(show_os2() );
- putchars("\n ") ;
+ print_me(show_os2());
+ putchars("\n") ;
  print_me(show_counter());
 /* Test 2 - zapis na osiach */
 //if (i ==1000) {
@@ -157,7 +157,7 @@ int i = 0;
 // putchars (" ") ;
 /*1 na drugim bicie */
 store_counter (0x4);
-print_me ( show_counter () );
+print_me (show_counter());
 putchars (" ") ;
 //}
 my_simulation_exit (0) ;
