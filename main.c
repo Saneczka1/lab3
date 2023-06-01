@@ -117,31 +117,40 @@ int main ( void ) {
 putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 
 
-putchars (" Test : \n ") ;
+putchars(" Test : \n ");
 int i = 0;
 //for (;;) {
 //i ++;
 // odczyty na osiach 
 /* Os 1*/
-store_os1(0xAFDBCE);
- print_me(show_os1());
- putchars("\n");
- sleep(5);
+//store_os1(0xAFDBCE);
+ //print_me(show_os1());
+ //putchars("\n");
 /* Os 2*/
-store_os2(0x111222);
- print_me(show_os2());
- putchars("\n") ;
- print_me(show_counter());
+ //store_os2(0x111222);
+ //print_me(show_os2());
+ //putchars("\n") ;
+ //print_me(show_counter());
 /* Test 2 - zapis na osiach */ //                           działa
 //if (i ==1000) {
-/* Os 1
-     putchars (" Testowana w a r t o Ż : 0x7C57BA \n ") ;
-     putchars (" Spodziewany wynik : 1111") ;
-     store_os1 (0x7C57BC);
-    /* Os 2
-     putchars (" Testowana w a r t o Ż : 0 xBABA \n ") ;
-     putchars (" Spodziewany wynik : 0101") ;
-     store_os2 (0xBABC);*/
+/* Os 1*/
+     putchars (" Testowana w a r t o Ż : 0xabcdec \n ") ;
+     putchars (" Spodziewany wynik : 0111") ;
+     store_os1 (0xabcdec);
+    if (show_os1() == 7) {
+    putchars("OK");
+} else {
+    putchars("NOT OK");
+}
+    /* Os 2*/
+     putchars (" Testowana w a r t o Ż : 0x123456 \n ") ;
+     putchars (" Spodziewany wynik : 0100") ;
+     store_os2(0x123456);
+    if (show_os2() == 4) {
+    putchars("OK");
+} else {
+    putchars("NOT OK");
+}
 //    }
 /* Test 3 - test podtrzymania */
 // putchars (" Test podtrzymania ") ;
