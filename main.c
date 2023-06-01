@@ -136,11 +136,11 @@ if (i ==1000) {
 /* Os 1*/
      putchars (" Testowana w a r t o Ż : 0 x7C57BA \n ") ;
      putchars (" Spodziewany wynik : 1111") ;
-     store_os1 (0 x7C57BA );
+     store_os1 (0x7C57BA );
     /* Os 2*/
      putchars (" Testowana w a r t o Ż : 0 xBABA \n ") ;
      putchars (" Spodziewany wynik : 0101") ;
-     store_os2 (0 xBABA );
+     store_os2 (0xBABA );
     }
 /* Test 3 - test podtrzymania */
 // putchars (" Test podtrzymania ") ;
