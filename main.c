@@ -3,9 +3,9 @@
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
-# define SYKT_OS1 (( SYKT_CTRL_ADDR ) +0 x0040 )
-# define SYKT_OS2 (( SYKT_CTRL_ADDR ) +0 x00F0 ) //pozmieniac
-# define COUNTER (( SYKT_CTRL_ADDR ) +0 x02E8 )
+# define SYKT_OS1 (( SYKT_CTRL_ADDR ) +0x0990 )
+# define SYKT_OS2 (( SYKT_CTRL_ADDR ) +0x0b90 ) //pozmieniac
+# define COUNTER (( SYKT_CTRL_ADDR ) +0x22c0 )
 
 #define SYKOM_EXIT_VAL      (0x00003333)
 #define SYKOM_UART_VAL      (0x00008888)
@@ -155,7 +155,7 @@ i ++;
 // print_me ( read_counter () );
 // putchars (" ") ;
 /*1 na drugim bicie */
-write_counter (0x4 );
+write_counter (0x4);
 print_me ( read_counter () );
 putchars (" ") ;
 }
