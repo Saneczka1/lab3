@@ -137,7 +137,7 @@ int i = 0;
      putchars (" Testowana w a r t o Ż : 0xabcdec \n ") ;
      putchars (" Spodziewany wynik : 0111") ;
      store_os1 (0xabcdec);
-    if (show_os1() == 7) {
+    if (show_os1() == 111) {
     putchars("OK");
 } else {
     putchars("NOT OK");
