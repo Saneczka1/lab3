@@ -123,11 +123,11 @@ int i = 0;
 //i ++;
 // odczyty na osiach 
 /* Os 1*/
-store_os1(0xccc);
+store_os1(0xcccccc);
  print_me(show_os1());
  putchars("\n") ;
 /* Os 2*/
-store_os2(0xcac);
+store_os2(0xcacccc);
  print_me(show_os2());
  putchars("\n") ;
  print_me(show_counter());
