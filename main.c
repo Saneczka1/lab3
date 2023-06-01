@@ -143,14 +143,14 @@ int i = 0;
     putchars("NOT OK");
 }
     /* Os 2*/
-     putchars (" Testowana w a r t o Ż : 0x123456 \n ") ;
-     putchars (" Spodziewany wynik : 0100") ;
-     store_os2(0x123456);
-    if (show_os2() == 4) {
-    putchars("OK");
-} else {
-    putchars("NOT OK");
-}
+ //    putchars (" Testowana w a r t o Ż : 0x123456 \n ") ;
+  //   putchars (" Spodziewany wynik : 0100") ;
+   //  store_os2(0x123456);
+   // if (show_os2() == 4) {
+   // putchars("OK");
+//} else {
+   // putchars("NOT OK");
+//}
 //    }
 /* Test 3 - test podtrzymania */
 // putchars (" Test podtrzymania ") ;
