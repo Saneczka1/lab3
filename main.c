@@ -3,9 +3,9 @@
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
-# define SYKT_OS1 (( SYKT_CTRL_ADDR ) +0x0990 )
-# define SYKT_OS2 (( SYKT_CTRL_ADDR ) +0x0b90 ) //pozmieniac
-# define COUNTER (( SYKT_CTRL_ADDR ) +0x22c0 )
+# define SYKT_OS1 (( SYKOM_CTRL_ADDR ) +0x0990 )
+# define SYKT_OS2 (( SYKOM_CTRL_ADDR ) +0x0b90 ) //pozmieniac
+# define COUNTER (( SYKOM_CTRL_ADDR ) +0x22c0 )
 
 #define SYKOM_EXIT_VAL      (0x00003333)
 #define SYKOM_UART_VAL      (0x00008888)
