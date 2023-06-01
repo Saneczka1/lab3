@@ -125,12 +125,13 @@ int i = 0;
 /* Os 1*/
 store_os1(0xAFDBCE);
  print_me(show_os1());
- putchars("\n") ;
+ putchars("\n");
+ sleep(5);
 /* Os 2*/
-//store_os2(0xcacccc);
-// print_me(show_os2());
-// putchars("\n") ;
-// print_me(show_counter());
+store_os2(0x111222);
+ print_me(show_os2());
+ putchars("\n") ;
+ print_me(show_counter());
 /* Test 2 - zapis na osiach */ //                           działa
 //if (i ==1000) {
 /* Os 1
