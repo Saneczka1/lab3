@@ -25,7 +25,7 @@ output [31:0] gpio_in_s_insp ;
 
 input clk ;
 reg [7:0] counter_s ;
-reg [2:0] state ;
+reg [2:0] status ;
 
 
 // odpowiedz na reset
