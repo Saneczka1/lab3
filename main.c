@@ -85,33 +85,31 @@ my_putchar ( hex_digits [j ]) ;
 }
 
 */
-int *os1_ptr = (int *)SYKT_OS1;
-int *os2_ptr = (int *)SYKT_OS2;
-int *counter_ptr = (int *)COUNTER;
+void store_os1(int i) {
+	RAW_SPACE(SYKT_OS1) = i;
+} 
 
-void store_os1(int integ) {
-    *os1_ptr = integ;
+void store_os2 (int i) {
+	RAW_SPACE(SYKT_OS2) = i;
+} 
+
+void store_counter(int i) {
+	RAW_SPACE(COUNTER) = i;
+} 
+
+unsigned long show_os1() { 
+	return RAW_SPACE(SYKT_OS1);
 }
 
-void store_os2(int integ) {
-    *os2_ptr = integ;
-}
-
-void store_counter(int integ) {
-    *counter_ptr = integ;
-}
-
-unsigned long show_os1() {
-    return (unsigned long)(*os1_ptr);
-}
-
-unsigned long show_os2() {
-    return (unsigned long)(*os2_ptr);
+unsigned long show_os2() { 
+	return RAW_SPACE(SYKT_OS2);
 }
 
 unsigned long show_counter() {
-    return (unsigned long)(*counter_ptr);
+ 	return RAW_SPACE(COUNTER);
 }
+
+
 
 
 
