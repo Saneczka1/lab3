@@ -155,7 +155,7 @@ i ++;
 // print_me ( read_counter () );
 // putchars (" ") ;
 /*1 na drugim bicie */
-write_counter (0 x4 );
+write_counter (0x4 );
 print_me ( read_counter () );
 putchars (" ") ;
 }
