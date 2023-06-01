@@ -129,7 +129,7 @@ i ++;
  putchars("\n ") ;
 /* Os 2*/
  print_me(show_os2() );
- putchars("\ n ") ;
+ putchars("\n ") ;
  print_me(show_counter());
 /* Test 2 - zapis na osiach */
 // if (i ==1000) {
@@ -148,7 +148,7 @@ i ++;
 // RAW_SPACE (0 x0570 )= 0 x5555 ; // zapisanie wartosci na zly adres
 /* Test 4 - test neutralnosci */
 // print_me ( RAW_SPACE (0 xFFFF )) ; // odczyt ze zlego adresu
-// putchars ("\ n ") ;
+// putchars ("\n ") ;
 /* Test 5 - test licznika */
 // unsigned long counter_value = show_counter () ;
 /*1 na pierwszym bicie */
