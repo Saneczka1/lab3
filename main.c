@@ -249,7 +249,7 @@ putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 putchars(" Test : \n ");
 
 
-store_os2_test();
+store_os1_test();
 
 //store_show_os1_test();
 //store_show_os2_test();
