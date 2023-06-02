@@ -46,21 +46,19 @@ char val2hex(unsigned int i) {
 }
 
 void print_me(unsigned long v) {
-    char hex_str[sizeof(unsigned long) * 2 + 1]; 
-    const char hex_digits[] = "0123456789abcdef"; 
-    
-    int i = sizeof(unsigned long) * 2;  
-    hex_str[i] = '\0';  
-    
-    do {
-      i--;
-      hex_str[i] = hex_digits[v % 16];  
-      v /= 16;  
-    } while (v != 0 && i > 0);
-    
-    putchars(&hex_str[i]);  
+    unsigned int remainder;
+    unsigned char hex_digits[16];
+    int i = 0;
 
-    
+    do {
+        remainder = v % 16;
+        hex_digits[i++] = val2hex(remainder);
+        v = v / 16;
+    } while (v != 0);
+
+    for (int j = i - 1; j >= 0; j--) {
+        my_putchar(hex_digits[j]);
+    }
 }
 
 
@@ -158,11 +156,13 @@ void store_os2_test(){
     
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    int i = 0;
+   int temp=RAW_SPACE(SYKT_OS1);
     for(;;){
         i++;
-    	putchars("Testowana wartość: 0x7C57BA \n");
-		putchars("Spodziewany wynik: 1111");
-		store_os2(0x7C57BA);
+    	putchars("Testowana wartość: 0x28 \n");
+		putchars("Spodziewany wynik: 5005");
+		store_os2(0x28);
+        print_me(temp);
          if(i==10000){
     		break;
     	}
@@ -211,9 +211,9 @@ putchars(" Test : \n ");
 
 
 //show_os1_test();
-show_os2_test();
-//store_os1_test();
-return 0;}
+//show_os2_test();
+//store_os2_test();
+//return 0;}
 
 
 
@@ -224,13 +224,13 @@ return 0;}
 
 
 
-//for (;;) {
-//i ++;
+for (;;) {
+i ++;
 // odczyty na osiach 
 /* Os 1*/
-//store_os1(0xAFDBCE);
- //print_me(show_os1());
- //putchars("\n");
+store_os1(0xAFDBCE);
+ print_me(show_os1());
+ putchars("\n");
 /* Os 2*/
  //store_os2(0x111222);
  //print_me(show_os2());
@@ -275,6 +275,7 @@ return 0;}
 //print_me(show_counter());
 //putchars(" ");
 //}
-//my_simulation_exit(0);
+my_simulation_exit(0);
 
 
+return 0;}
