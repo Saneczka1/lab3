@@ -203,7 +203,7 @@ void neutralnosc_test(){
    
     for(;;){
         i++;
-    	putchars("Test podtrzymania");
+    	putchars("Test neutralnosci: ");
 		print_me(RAW_SPACE(0xFFFF)); //odczyt ze zlego adresu
 		putchars("\n");
          if(i==10000){
