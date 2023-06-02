@@ -74,7 +74,7 @@ begin
 	else if ( saddress == 16'h22c0 )
 		begin
 			sdata_out_s [0] <= status [1];
-			sdata_out_s <= counter_s ;
+		//	sdata_out_s <= counter_s ;
 		end
 	else
 		sdata_out_s <='h0;
