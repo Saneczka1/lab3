@@ -103,7 +103,7 @@ void show_counter1_test(){
 }
 
 // 1 NA DRUGIM BICIE
-void show_counter3_test(){
+void show_counter2_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     int i=0;
     for(;;){
@@ -116,7 +116,7 @@ void show_counter3_test(){
 
 
 // 1 NA TRZECIM BICIE
-void show_counter2_test(){
+void show_counter3_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     int i=0;
     for(;;){
