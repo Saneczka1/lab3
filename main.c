@@ -107,15 +107,19 @@ void show_counter2_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     int i=0;
     for(;;){
+
+
         i++;
-        print_me (show_counter());
-         putchars (" ");
-    }
         if(i>10000){  
         store_counter(0x0);
         print_me(show_counter());
         putchars(" ");
-        }
+        }else{
+
+        print_me (show_counter());
+         putchars (" ");}
+    }
+        
 
     }
 
