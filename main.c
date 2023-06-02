@@ -12,13 +12,18 @@
 #define SYKOM_UART_VAL      (0x00008888)
 
 
+
 void my_simulation_exit(unsigned char ret_code) {
     RAW_SPACE(SYKOM_CTRL_ADDR) = SYKOM_EXIT_VAL | (((unsigned long)ret_code)<<16);
 }
 
+
+
 void my_putchar(unsigned char c) {
     RAW_SPACE(SYKOM_UART_ADDR)=SYKOM_UART_VAL | ((0x000000FF & (unsigned long)c)<<16);
 }
+
+
 
 unsigned long my_get_cpu_id(void) {
     return RAW_SPACE(SYKOM_ID_ADDR);
@@ -34,6 +39,8 @@ void putchars(unsigned char *s) {
     
 }
 
+
+
 char val2hex(unsigned int i) {
     if (i >= 0 && i <= 9) {
         return i + '0';
@@ -44,6 +51,8 @@ char val2hex(unsigned int i) {
     }
 
 }
+
+
 
 void print_me(unsigned long v) {
     unsigned int remainder;
@@ -63,26 +72,30 @@ void print_me(unsigned long v) {
 
 
 
-
 void store_os1(int i) {
 	RAW_SPACE(SYKT_OS1) = i;
 } 
+
 
 void store_os2 (int i) {
 	RAW_SPACE(SYKT_OS2) = i;
 } 
 
+
 void store_counter(int i) {
 	RAW_SPACE(COUNTER) = i;
 } 
+
 
 unsigned long show_os1() { 
 	return RAW_SPACE(SYKT_OS1);
 }
 
+
 unsigned long show_os2() { 
 	return RAW_SPACE(SYKT_OS2);
 }
+
 
 unsigned long show_counter() {
  	return RAW_SPACE(COUNTER);
@@ -120,10 +133,7 @@ void show_counter2_test(){
          putchars (" ");}
     }
         
-
-    }
-
-
+ }
 
 // 1 NA TRZECIM BICIE
 void show_counter3_test(){
@@ -138,6 +148,8 @@ void show_counter3_test(){
 
 
 }
+
+
 
 void sleep(){
     int i=0;
@@ -165,6 +177,8 @@ void show_os1_test(){
     }
     }
 }
+
+
 void show_os2_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
@@ -182,6 +196,8 @@ void show_os2_test(){
     }
 }
 
+
+
 void store_show_os1_test(){
     
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
@@ -197,8 +213,10 @@ void store_show_os1_test(){
     putchars("Zaszlo");
     putchars("\n");
 
-    
 }
+
+
+
 void store_show_os2_test(){                     
     
  putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
@@ -215,6 +233,8 @@ void store_show_os2_test(){
     putchars("\n");
 }
 
+
+
 void store_os2_test(){                     
     int i=0;
     for (;;) {
@@ -225,8 +245,6 @@ void store_os2_test(){
 	store_os2(0xFF58C);
     putchars("\n");
 }}
-
-
 
 
 
@@ -247,9 +265,6 @@ void store_os1_test(){
 
 
 
-
-
-
 void podtrzymanie_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
@@ -262,6 +277,7 @@ void podtrzymanie_test(){
         
     }
 }
+
 
 
 
