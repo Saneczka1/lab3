@@ -304,7 +304,7 @@ int main ( void ) {
 putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 putchars(" Test : \n ");
 
-show_os1();
+show_os1_test();
 //store_os2_test();
 //store_os1_test();
 //show_counter1_test();
