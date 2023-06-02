@@ -228,6 +228,9 @@ void store_os2_test(){
 
 
 
+
+
+
 void store_os1_test(){                     
     
  putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
@@ -286,11 +289,12 @@ putchars(" Test : \n ");
 
 
 //store_os2_test();
+store_os1_test();
 //show_counter1_test();
 //show_counter3_test();
 //show_counter1_test();
 
-store_show_os1_test();
+//store_show_os1_test();
 //store_show_os2_test();
 //neutralnosc_test();
 //podtrzymanie_test();
