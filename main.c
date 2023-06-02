@@ -99,7 +99,6 @@ void show_counter1_test(){
     print_me (show_counter());
     putchars (" ");
     }
-hars(" ");
 
 }
 
