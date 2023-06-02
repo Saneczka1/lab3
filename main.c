@@ -138,7 +138,7 @@ void show_os2_test(){
 }
 
 void store_os1_test(){
-    int i = 0;
+    
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    int i =0;
     for(;;){
