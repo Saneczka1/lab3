@@ -112,7 +112,7 @@ void show_counter2_test(){
          putchars (" ");
     }
         if(i>10000){  
-        store_counter(0x4);
+        store_counter(0x0);
         print_me(show_counter());
         putchars(" ");
         }
