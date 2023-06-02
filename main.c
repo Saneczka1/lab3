@@ -275,7 +275,7 @@ store_os1(0xAFDBCE);
 //print_me(show_counter());
 //putchars(" ");
 //}
-my_simulation_exit(0);
+//my_simulation_exit(0);
 
 
 return 0;}
