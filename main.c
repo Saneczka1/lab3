@@ -222,7 +222,7 @@ putchars(" Test : \n ");
 
 
 
-
+int i=0;
 
 for (;;) {
 i ++;
@@ -276,6 +276,7 @@ store_os1(0xAFDBCE);
 //putchars(" ");
 //}
 //my_simulation_exit(0);
-
-
-return 0;}
+}
+my_simulation_exit(0);   	
+return 0;
+}
