@@ -187,11 +187,9 @@ void podtrzymanie_test(){
     for(;;){
         i++;
     	putchars("Test podtrzymania:");
-		store_os1(0x700F);
-		RAW_SPACE(0x0552)= 0x5555; //zapisanie wartosci na zly adres
-        if(i==10000){
-    		break;
-    	}
+		store_os1 (0x700F );
+        RAW_SPACE (0x0574)= 0x5555 ;
+        
     }
 }
 
