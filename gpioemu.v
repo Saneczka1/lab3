@@ -73,7 +73,7 @@ begin
 			sdata_out_s <= gpio_in_s[15:12] << 3; // dane są na [6:3]
 	else if ( saddress == 16'h22c0 )
 		begin
-			sdata_out_s [0] <= status [1];
+			sdata_out_s <= status<<20;
 		//	sdata_out_s <= counter_s ;
 		end
 	else
