@@ -225,7 +225,7 @@ putchars(" Test : \n ");
 //store_show_os1_test();
 //store_show_os2_test();
 //neutralnosc_test();
-podtrzymanie_test()
+podtrzymanie_test();
 
 
 
