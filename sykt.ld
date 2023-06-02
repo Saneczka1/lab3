@@ -10,7 +10,7 @@ OUTPUT_ARCH(riscv)
 MEMORY
 {
   /* qemu-system-risc64 virt machine - fragment musisz zmodyfikowac samodzielnie */
-    RAM (rwx)       : ORIGIN = 0X80000630, LENGTH = 128M
+    RAM (rwx)       : ORIGIN = 0X80000470, LENGTH = 128M
 }
 /* >>> Modified Section End <<< */
 ENTRY(_start)
