@@ -152,7 +152,7 @@ void store_show_os1_test(){
    int i =0;
    sleep();
    putchars("Dane Wejsciowe 700F\n");
-   putchars("Dane Oczekiwane: 70000\n");
+   putchars("Dane Oczekiwane: 78000\n");
    putchars("Dane Otrzymane:");
    
     store_os1(0x700F);
