@@ -113,7 +113,7 @@ void show_os1_test(){
         i++;
     print_me(show_os1());
 	putchars("\n"); 
-    putchars("OK\n");
+    
     
     if(i==10000){
         break;
@@ -212,7 +212,7 @@ putchars(" Test : \n ");
 
 //show_os1_test();
 //show_os2_test();
-//store_os2_test();
+store_os1_test();
 //return 0;}
 
 
@@ -222,15 +222,15 @@ putchars(" Test : \n ");
 
 
 
-int i=0;
+//int i=0;
 
-for (;;) {
-i ++;
+//for (;;) {
+//i ++;
 // odczyty na osiach 
 /* Os 1*/
-store_os1(0xAFDBCE);
- print_me(show_os1());
- putchars("\n");
+//store_os1(0xAFDBCE);
+// print_me(show_os1());
+// putchars("\n");
 /* Os 2*/
  //store_os2(0x111222);
  //print_me(show_os2());
@@ -276,7 +276,7 @@ store_os1(0xAFDBCE);
 //putchars(" ");
 //}
 //my_simulation_exit(0);
-}
+//}
 my_simulation_exit(0);   	
 return 0;
 }
