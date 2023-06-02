@@ -1,6 +1,6 @@
 #define RAW_SPACE(addr)     (*(volatile unsigned long *)(addr))
 
-#define SYKOM_CTRL_ADDR     (0x100470)		
+#define SYKOM_CTRL_ADDR     (0x100630)		
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
@@ -23,7 +23,7 @@ void my_putchar(unsigned char c) {
     RAW_SPACE(SYKOM_UART_ADDR)=SYKOM_UART_VAL | ((0x000000FF & (unsigned long)c)<<16);
 }
 
-
+ 
 
 unsigned long my_get_cpu_id(void) {
     return RAW_SPACE(SYKOM_ID_ADDR);
@@ -288,7 +288,7 @@ void neutralnosc_test(){
     for(;;){
         i++;
     	putchars("Test neutralnosci: ");
-		print_me(RAW_SPACE(0xFFFF)); //odczyt ze zlego adresu
+		print_me(RAW_SPACE(0xFFFC)); //odczyt ze zlego adresu
 		putchars("\n");
          if(i==10000){
     		break;
@@ -305,7 +305,7 @@ putchars(" Test : \n ");
 
 
 //store_os2_test();
-store_os1_test();
+//store_os1_test();
 //show_counter1_test();
 //show_counter3_test();
 //show_counter1_test();
@@ -313,7 +313,7 @@ store_os1_test();
 //store_show_os1_test();
 //store_show_os2_test();
 //neutralnosc_test();
-//podtrzymanie_test();
+podtrzymanie_test();
 
 my_simulation_exit(0);   	
 return 0;
