@@ -94,9 +94,8 @@ unsigned long show_counter() {
 void show_counter_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    
-     unsigned long counter = show_counter () ;
-
-    store_counter (0x2) ;
+     unsigned long counter = show_counter() ;
+    store_counter(0x2) ;
     print_me (show_counter());
     putchars (" ") ;
 /*1 na drugim bicie */
