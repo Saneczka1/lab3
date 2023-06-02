@@ -67,8 +67,7 @@ always @( posedge srd )
 begin
 	//oś pierwsza 0x0990
 		if (saddress == 16'h0990)
-			sdata_out_s <= os1
-			gpio_in_s[3:0] << 15; // dane są na [18:15]
+			sdata_out_s <=gpio_in_s[3:0] << 15; // dane są na [18:15]
 		//oś druga 0x0b90
 	else if (saddress == 16'h0b90)
 			sdata_out_s <= gpio_in_s[15:12] << 3; // dane są na [6:3]
