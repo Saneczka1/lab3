@@ -272,7 +272,7 @@ void podtrzymanie_test(){
     for(;;){
         i++;
     	putchars("Test podtrzymania:");
-		store_os1 (0xFF58C);
+		store_os1(0xFF58C);
         RAW_SPACE (0x0574)= 0x5555 ;
         
     }
