@@ -1,6 +1,6 @@
 #define RAW_SPACE(addr)     (*(volatile unsigned long *)(addr))
 
-#define SYKOM_CTRL_ADDR     (0x100630)		
+#define SYKOM_CTRL_ADDR     (0x100470)		
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
