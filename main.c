@@ -93,7 +93,7 @@ unsigned long show_counter() {
 
 
 /*
-void test_read_counter(){
+void test_show_counter(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    
     for(;;){
@@ -107,13 +107,13 @@ void test_read_counter(){
 
 
 
-/*
-void test_read_os1_test(){
+
+void show_os1_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     for(;;){
         i++;
-    print_me(read_os1());
+    print_me(show_os1());
 	putchars("\n"); 
     putchars("OK\n");
     }
@@ -121,12 +121,12 @@ void test_read_os1_test(){
     		break;
     	}
 }
-void read_os2_test(){
+void show_os2_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     for(;;){
         i++;
-    print_me(read_os2());
+    print_me(show_os2());
 	putchars("\n"); 
     putchars("OK\n");
     }
@@ -135,7 +135,7 @@ void read_os2_test(){
     	}
 }
 
-void write_os1_test(){
+void store_os1_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    
@@ -143,14 +143,14 @@ void write_os1_test(){
         i++;
     	putchars("Testowana wartość: 0x7C57BA \n");
 		putchars("Spodziewany wynik: 1111");
-		write_os1(0x7C57BA);
+		store_os1(0x7C57BA);
          if(i==10000){
     		break;
     	}
     }
     
 }
-void test_write_os2(){                      ten to lepiej na maszynie
+void test_store_os2(){                      ten to lepiej na maszynie
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    
@@ -158,7 +158,7 @@ void test_write_os2(){                      ten to lepiej na maszynie
         i++;
     	putchars("Testowana wartość: 0x7C57BA \n");
 		putchars("Spodziewany wynik: 1111");
-		write_os2(0x7C57BA);
+		store_os2(0x7C57BA);
          if(i==10000){
     		break;
     	}
@@ -173,8 +173,8 @@ void podtrzymanie_test(){
     for(;;){
         i++;
     	putchars("Test podtrzymania");
-		write_os1(0x7C57BA);
-		RAW_SPACE(0x0570)= 0x0x5555; //zapisanie wartosci na zly adres
+		store_os1(0x7C57BA);
+		RAW_SPACE(0x0570)= 0x5555; //zapisanie wartosci na zly adres
         if(i==10000){
     		break;
     	}
@@ -203,17 +203,9 @@ void neutralnosc_test(){
 
 int main ( void ) {
 putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
-
-
 putchars(" Test : \n ");
-int i = 0;
-
-
-
-
-
-
-
+show_os1_test();
+return 0;}
 
 
 
@@ -271,10 +263,10 @@ int i = 0;
 // print_me ( show_counter () );
 // putchars (" ") ;
 /*1 na drugim bicie */
-store_counter(0x4);
-print_me(show_counter());
-putchars(" ");
+//store_counter(0x4);
+//print_me(show_counter());
+//putchars(" ");
 //}
-my_simulation_exit(0);
-return 0;}
+//my_simulation_exit(0);
+
 
