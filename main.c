@@ -188,7 +188,7 @@ void store_os2_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     putchars("Testowana wartość: 0x7C57BA \n");
 	putchars("Spodziewany wynik: 1111");
-	write_os1(0x7C57BA);
+	store_os1(0x7C57BA);
 }}
 
 
