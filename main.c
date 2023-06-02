@@ -1,6 +1,6 @@
 #define RAW_SPACE(addr)     (*(volatile unsigned long *)(addr))
 
-#define SYKOM_CTRL_ADDR     (0x100630)		
+#define SYKOM_CTRL_ADDR     (0x00100630)	//tu dodałem	
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
@@ -45,12 +45,6 @@ char val2hex(unsigned int i) {
 
 }
 
-
-
-
-
-
-
 void print_me(unsigned long v) {
     char hex_str[sizeof(unsigned long) * 2 + 1]; 
     unsigned char hex_digits [16];
@@ -69,22 +63,9 @@ void print_me(unsigned long v) {
     
 }
 
-/*
-void print_me ( unsigned long v) {
-unsigned int remainder ;
-unsigned char hex_digits [16];
-int i = 0;
-do {
-remainder = v % 16;
-hex_digits [i ++] = val2hex ( remainder );
-v = v / 16;
-} while ( v != 0) ;
-for ( int j = i - 1; j >= 0; j - -) {
-my_putchar ( hex_digits [j ]) ;
-}
-}
 
-*/
+
+
 void store_os1(int i) {
 	RAW_SPACE(SYKT_OS1) = i;
 } 
@@ -111,6 +92,113 @@ unsigned long show_counter() {
 
 
 
+/*
+void test_read_counter(){
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+   
+    for(;;){
+        i++;
+    	if(RAW_SPACE(SYKT_GPIO_COUNTER)==0x80000){
+    		break;
+    	}
+    }
+    putchars("THE END OF TEST 1\n");
+}*/
+
+
+
+/*
+void test_read_os1_test(){
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    for(;;){
+        i++;
+    print_me(read_os1());
+	putchars("\n"); 
+    putchars("OK\n");
+    }
+     if(i==10000){
+    		break;
+    	}
+}
+void read_os2_test(){
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    for(;;){
+        i++;
+    print_me(read_os2());
+	putchars("\n"); 
+    putchars("OK\n");
+    }
+     if(i==10000){
+    		break;
+    	}
+}
+
+void write_os1_test(){
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+   
+    for(;;){
+        i++;
+    	putchars("Testowana wartość: 0x7C57BA \n");
+		putchars("Spodziewany wynik: 1111");
+		write_os1(0x7C57BA);
+         if(i==10000){
+    		break;
+    	}
+    }
+    
+}
+void test_write_os2(){                      ten to lepiej na maszynie
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+   
+    for(;;){
+        i++;
+    	putchars("Testowana wartość: 0x7C57BA \n");
+		putchars("Spodziewany wynik: 1111");
+		write_os2(0x7C57BA);
+         if(i==10000){
+    		break;
+    	}
+    }
+}
+
+
+void podtrzymanie_test(){
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+   
+    for(;;){
+        i++;
+    	putchars("Test podtrzymania");
+		write_os1(0x7C57BA);
+		RAW_SPACE(0x0570)= 0x0x5555; //zapisanie wartosci na zly adres
+        if(i==10000){
+    		break;
+    	}
+    }
+}
+
+
+
+void neutralnosc_test(){
+    int i = 0;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+   
+    for(;;){
+        i++;
+    	putchars("Test podtrzymania");
+		print_me(RAW_SPACE(0xFFFF)); //odczyt ze zlego adresu
+		putchars("\n");
+         if(i==10000){
+    		break;
+    	}
+    }
+}
+
+*/
 
 
 int main ( void ) {
@@ -119,6 +207,23 @@ putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 
 putchars(" Test : \n ");
 int i = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //for (;;) {
 //i ++;
 // odczyty na osiach 
@@ -133,7 +238,7 @@ int i = 0;
  //print_me(show_counter());
 /* Test 2 - zapis na osiach */ //                           działa
 //if (i ==1000) {
-/* Os 1*/
+/* Os 1
      putchars(" Testowana w a r t o Ż : 0xabcdec \n ") ;
      putchars(" Spodziewany wynik : 0111") ;
      store_os1(0xabcdec);

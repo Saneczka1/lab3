@@ -50,7 +50,7 @@ always @( posedge swr )
 begin
 	//oś pierwsza 
 		if (saddress == 16'h0990)
-			gpio_out_s[3:0] <= sdata_in[18:15];     	
+			gpio_out_s[3:0] <= sdata_in[18:15];     
 	else if (saddress == 16'h0b90)
 			gpio_out_s[15:12] <= sdata_in[6:3];
 	else if (saddress ==16'h22c0)
@@ -67,7 +67,8 @@ always @( posedge srd )
 begin
 	//oś pierwsza 0x0990
 		if (saddress == 16'h0990)
-			sdata_out_s <= gpio_in_s[3:0] << 15; // dane są na [18:15]
+			sdata_out_s <= os1
+			gpio_in_s[3:0] << 15; // dane są na [18:15]
 		//oś druga 0x0b90
 	else if (saddress == 16'h0b90)
 			sdata_out_s <= gpio_in_s[15:12] << 3; // dane są na [6:3]
