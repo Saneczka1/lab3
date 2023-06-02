@@ -189,6 +189,7 @@ void store_os2_test(){
     putchars("Testowana wartość: 0xFF58C \n");
 	putchars("Spodziewany wynik: 0001");
 	store_os2(0xFF58C);
+    putchars("\n");
 }}
 
 
