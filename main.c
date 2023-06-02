@@ -116,10 +116,11 @@ void show_os1_test(){
     print_me(show_os1());
 	putchars("\n"); 
     putchars("OK\n");
+    
+    if(i==10000){
+        break;
     }
-     if(i==10000){
-    		break;
-    	}
+    }
 }
 void show_os2_test(){
     int i = 0;
@@ -129,10 +130,11 @@ void show_os2_test(){
     print_me(show_os2());
 	putchars("\n"); 
     putchars("OK\n");
+    
+    if(i==10000){
+        break;
     }
-     if(i==10000){
-    		break;
-    	}
+    }
 }
 
 void store_os1_test(){
@@ -150,10 +152,10 @@ void store_os1_test(){
     }
     
 }
-void test_store_os2(){                      ten to lepiej na maszynie
-    int i = 0;
+void store_os2_test(){                     
+    
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
-   
+   int i = 0;
     for(;;){
         i++;
     	putchars("Testowana wartość: 0x7C57BA \n");
@@ -198,7 +200,7 @@ void neutralnosc_test(){
     }
 }
 
-*/
+
 
 
 int main ( void ) {
