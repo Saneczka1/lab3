@@ -201,7 +201,7 @@ void store_os1_test(){
     i ++;
         putchars("Testowana wartość: 0xA000 \n");
 		putchars("Spodziewany wynik: 5000");
-		store_os1(0xABBC);
+		store_os1(0xFF58C);
     }
 }
 
