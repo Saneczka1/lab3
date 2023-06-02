@@ -89,9 +89,9 @@ unsigned long show_counter() {
 }
 
 
+// 1 NA PIERWSZYM BICIE
 
-
-void show_counter_test(){
+void show_counter1_test(){
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
     int i=0;
        for(;;){
@@ -99,11 +99,34 @@ void show_counter_test(){
     print_me (show_counter());
     putchars (" ");
     }
-/*1 na drugim bicie */
-//store_counter(0x4);
-//print_me(show_counter());
-//putchars(" ");
-//}
+hars(" ");
+
+}
+
+// 1 NA DRUGIM BICIE
+void show_counter2_test(){
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    int i=0;
+    for(;;){
+        i++;
+        store_counter(0x4);
+        print_me(show_counter());
+        putchars(" ");
+    }
+}
+
+
+// 1 NA TRZECIM BICIE
+void show_counter2_test(){
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    int i=0;
+    for(;;){
+        i++;
+        store_counter(0x8);
+        print_me(show_counter());
+        putchars(" ");
+    }
+
 
 }
 
@@ -256,7 +279,7 @@ putchars(" Test : \n ");
 
 
 //store_os2_test();
-show_counter_test();
+show_counter2_test();
 
 //store_show_os1_test();
 //store_show_os2_test();
