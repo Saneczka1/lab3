@@ -55,21 +55,22 @@ char val2hex(unsigned int i) {
 
 
 void print_me(unsigned long v) {
-    unsigned int remainder;
-    unsigned char hex_digits[16];
-    int i = 0;
-
+    char hex_str[sizeof(unsigned long) * 2 + 1]; 
+    const char hex_digits[] = "0123456789abcdef"; 
+    
+    int i = sizeof(unsigned long) * 2;  
+    hex_str[i] = '\0';  
+    
     do {
-        remainder = v % 16;
-        hex_digits[i++] = val2hex(remainder);
-        v = v / 16;
-    } while (v != 0);
+      i--;
+      hex_str[i] = hex_digits[v % 16];  
+      v /= 16;  
+    } while (v != 0 && i > 0);
+    
+    putchars(&hex_str[i]);  
 
-    for (int j = i - 1; j >= 0; j--) {
-        my_putchar(hex_digits[j]);
-    }
+    
 }
-
 
 
 void store_os1(int i) {
@@ -273,7 +274,7 @@ void podtrzymanie_test(){
         i++;
     	putchars("Test podtrzymania:");
 		store_os1(0xFF58C);
-        RAW_SPACE (0x0574)= 0x5555 ;
+        RAW_SPACE(0x0574)= 0x5555 ;
         
     }
 }
@@ -306,14 +307,14 @@ putchars(" Test : \n ");
 
 //store_os2_test();
 //store_os1_test();
-//show_counter1_test();
+show_counter1_test();
 //show_counter3_test();
 //show_counter1_test();
 
 //store_show_os1_test();
 //store_show_os2_test();
 //neutralnosc_test();
-podtrzymanie_test();
+//podtrzymanie_test();
 
 my_simulation_exit(0);   	
 return 0;
