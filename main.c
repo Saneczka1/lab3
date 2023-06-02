@@ -278,7 +278,7 @@ putchars(" Test : \n ");
 
 
 //store_os2_test();
-show_counter2_test();
+show_counter3_test();
 
 //store_show_os1_test();
 //store_show_os2_test();
