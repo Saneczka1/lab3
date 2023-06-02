@@ -92,6 +92,7 @@ begin
 		end
 	if ( counter_s != 255 && status [1]==1)
 		counter_s <= counter_s + 1;
+		status [0] <= 0;
 	if ( counter_s == 255) begin
 		status [0] <= 1;
 		counter_s <=252;
