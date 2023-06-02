@@ -108,11 +108,17 @@ void show_counter2_test(){
     int i=0;
     for(;;){
         i++;
+        print_me (show_counter());
+         putchars (" ");
+    }
+        if(i>10000){  
         store_counter(0x4);
         print_me(show_counter());
         putchars(" ");
+        }
+
     }
-}
+
 
 
 // 1 NA TRZECIM BICIE
@@ -278,7 +284,7 @@ putchars(" Test : \n ");
 
 
 //store_os2_test();
-show_counter3_test();
+show_counter2_test();
 
 //store_show_os1_test();
 //store_show_os2_test();
