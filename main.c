@@ -147,7 +147,7 @@ void store_os1_test(){
     print_me(show_os1());
     putchars("\n");
 
-        if(i==10){
+        if(i==100){
     	break;
     	}
 
