@@ -104,6 +104,7 @@ void test_show_counter(){
 }*/
 
 void sleep(){
+    int i=0;
     for(;;){
         i++;
 
