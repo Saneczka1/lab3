@@ -146,26 +146,35 @@ void show_os2_test(){
     }
 }
 
-void store_os1_test(){
+void store_show_os1_test(){
     
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    int i =0;
    sleep();
+   putchars("dane wejsciowe 700F\n");
+   putchars("dane oczekiwane 7800\n");
+   putchars("dane otrzymane:");
    
     store_os1(0x700F);
     print_me(show_os1());
     putchars("\n");
+    putchars("Zaszlo");
+
     
 }
-void store_os2_test(){                     
+void store_show_os2_test(){                     
     
  putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
    int i =0;
    sleep();
+   putchars("dane wejsciowe 700F\n");
+   putchars("dane oczekiwane 38\n");
+   putchars("dane otrzymane:");
    
     store_os2(0x700F);
     print_me(show_os2());
     putchars("\n");
+    putchars("Zaszlo");
 }
 
 
@@ -211,8 +220,8 @@ putchars(" Test : \n ");
 
 //show_os1_test();
 //show_os2_test();
-store_os1_test();
-store_os2_test();
+store_show_os1_test();
+store_show_os2_test();
 //return 0;}
 
 
