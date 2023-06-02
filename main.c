@@ -222,10 +222,9 @@ putchars(" Test : \n ");
 
 //show_os1_test();
 //show_os2_test();
-store_show_os1_test();
-store_show_os2_test();
-//return 0;}
-
+//store_show_os1_test();
+//store_show_os2_test();
+neutralnosc_test();
 
 
 
