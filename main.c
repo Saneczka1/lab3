@@ -182,11 +182,13 @@ void store_show_os2_test(){
 ////////////////////////
 ////////////////////
 void store_os2_test(){                     
-    
- putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    int i=0;
+    for (;;) {
+    i ++;
+    putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
      putchars("Testowana wartość: 0x28 \n");
 		putchars("Spodziewany wynik: 5005");
-		store_os1(0x28);
+		store_os1(0x28);}
 }
 
 
@@ -194,9 +196,13 @@ void store_os2_test(){
 void store_os1_test(){                     
     
  putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+    int i=0;
+    for (;;) {
+    i ++;
         putchars("Testowana wartość: 0x28000 \n");
 		putchars("Spodziewany wynik: 5000");
 		store_os1(0x28000);
+    }
 }
 
 
