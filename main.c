@@ -1,11 +1,11 @@
 #define RAW_SPACE(addr)     (*(volatile unsigned long *)(addr))
 
-#define SYKOM_CTRL_ADDR     (0x00100630)	//tu dodałem	
+#define SYKOM_CTRL_ADDR     (0x100630)		
 #define SYKOM_ID_ADDR       ((SYKOM_CTRL_ADDR)+4)
 #define SYKOM_UART_ADDR     ((SYKOM_CTRL_ADDR)+8)
 
 # define SYKT_OS1 (( SYKOM_CTRL_ADDR ) +0x0990 )
-# define SYKT_OS2 (( SYKOM_CTRL_ADDR ) +0x0b90 ) //pozmieniac
+# define SYKT_OS2 (( SYKOM_CTRL_ADDR ) +0x0190 ) 
 # define COUNTER (( SYKOM_CTRL_ADDR ) +0x22c0 )
 
 #define SYKOM_EXIT_VAL      (0x00003333)
@@ -47,7 +47,7 @@ char val2hex(unsigned int i) {
 
 void print_me(unsigned long v) {
     char hex_str[sizeof(unsigned long) * 2 + 1]; 
-    unsigned char hex_digits [16];
+    const char hex_digits[] = "0123456789abcdef"; 
     
     int i = sizeof(unsigned long) * 2;  
     hex_str[i] = '\0';  
@@ -125,10 +125,12 @@ void show_os1_test(){
 void show_os2_test(){
     int i = 0;
     putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
+     long temp=RAW_SPACE(SYKT_OS1);
     for(;;){
         i++;
     print_me(show_os2());
 	putchars("\n"); 
+    print_me(temp);
     putchars("OK\n");
     
     if(i==10000){
@@ -143,9 +145,9 @@ void store_os1_test(){
    
     for(;;){
         i++;
-    	putchars("Testowana wartość: 0x7C57BA \n");
-		putchars("Spodziewany wynik: 1111");
-		store_os1(0x7C57BA);
+    	putchars("Testowana wartość: 0x700F \n");
+		putchars("Spodziewany wynik: 78000");
+		store_os1(0x700F);
          if(i==10000){
     		break;
     	}
@@ -206,7 +208,11 @@ void neutralnosc_test(){
 int main ( void ) {
 putchars("RISCV-APP: test ("__FILE__", "__DATE__", "__TIME__")\n");
 putchars(" Test : \n ");
-show_os1_test();
+
+
+//show_os1_test();
+show_os2_test();
+//store_os1_test();
 return 0;}
 
 
